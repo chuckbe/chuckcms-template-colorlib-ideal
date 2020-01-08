@@ -12,6 +12,13 @@
 
 ``` php artisan vendor:publish --tag=chuckcms-template-colorlib-ideal-public --force ``` 
 
+4. Change color in /scss/bootstrap/_variables.scss and re-compile css
+
+```
+sass public/chuckbe/chuckcms-template-colorlib-ideal/scss/bootstrap/bootstrap.scss public/chuckbe/chuckcms-template-colorlib-ideal/css/bootstrap.min.css --style compressed
+sass public/chuckbe/chuckcms-template-colorlib-ideal/scss/style.scss public/chuckbe/chuckcms-template-colorlib-ideal/css/style.css
+```
+
 ### License 
 
 Theme is licensed under MIT license © 2020 - Chuck
