@@ -1,0 +1,26 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row  mb-5">
+            <div class="col-md-7">
+                <h2 class="heading-39291" data-content="title">Blog and Updates</h2>
+                <p data-content="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quos veniam magni totam, architecto earum dolor id obcaecati!</p>
+            </div>
+        </div>
+        <div class="row align-items-stretch">
+            [LOOP=ideal-blogs LIMIT=4]
+            <div class="col-lg-3 col-md-6 mb-5">
+                <div class="post-entry-1 h-100">
+                    <a href="[%URL%]/blog/[ideal-blogs+slug]">
+                        <img src="[%URL%][ideal-blogs+thumbnail]" alt="Image" class="img-fluid">
+                    </a>
+                    <div class="post-entry-1-contents">
+                        <span class="meta">[ideal-blogs+date]</span>
+                        <h2><a href="[%URL%]/blog/[ideal-blogs+slug]">[ideal-blogs+title]</a></h2>
+                        <p class="my-3"><a href="[%URL%]/blog/[ideal-blogs+slug]" class="more-39291">Continue Reading</a></p>
+                    </div>
+                </div>
+            </div>
+            [/LOOP]
+        </div>
+    </div>
+</div>

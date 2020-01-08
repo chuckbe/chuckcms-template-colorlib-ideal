@@ -1,0 +1,26 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5 section-2-title">
+            <div class="col-md-6">
+                <h2 class="heading-39291" data-content="title">Meet Our Team</h2>
+                <p data-content="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident eius ratione velit, voluptas laborum nemo quas ad necessitatibus placeat?</p>
+            </div>
+        </div>
+        <div class="row align-items-stretch">
+            [LOOP=ideal-team]
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="post-entry-1 h-100">
+                    <a href="#" onclick="e.preventDefault();">
+                        <img src="[%URL%][ideal-team+image]" alt="Image" class="img-fluid">
+                    </a>
+                    <div class="post-entry-1-contents">
+                        <span class="meta">[ideal-team+function]</span>
+                        <h2>[ideal-team+name]</h2>
+                        <p>[ideal-team+description]</p>
+                    </div>
+                </div>
+            </div>
+            [/LOOP]
+        </div>
+    </div>
+</div>

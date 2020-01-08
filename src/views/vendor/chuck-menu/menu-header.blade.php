@@ -1,0 +1,33 @@
+@if(isset($menus))
+<ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+    @foreach($menus as $m)
+        @if($m->depth == 0)
+        <li class="{{ $menus->where('depth', 1)->where('parent', $m->id)->count() > 0 ? 'dropdown' : '' }}">
+            <a href="{{ $m->link }}" class="nav-link{{ $menus->where('depth', 1)->where('parent', $m->id)->count() > 0 ? ' dropdown-toggle' : '' }}" {{ $menus->where('depth', 1)->where('parent', $m->id)->count() > 0 ? 'data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"' : '' }}>
+                {{ $m->label }} {!! $menus->where('depth', 1)->where('parent', $m->id)->count() > 0 ? '<span class="caret"></span>' : '' !!}
+            </a>
+            @foreach($menus->where('depth', 1)->where('parent', $m->id) as $subm)
+            @if($loop->first)
+            <ul class="dropdown-menu">
+            @endif
+                <li class="{{ $menus->where('depth', 2)->where('parent', $subm->id)->count() > 0 ? 'dropdown dropdown-submenu' : '' }}">
+                    <a href="{{ $subm->link }}" class="{{ $menus->where('depth', 2)->where('parent', $subm->id)->count() > 0 ? 'dropdown-toggle' : '' }}" {{ $menus->where('depth', 2)->where('parent', $subm->id)->count() > 0 ? 'data-toggle="dropdown"' : '' }}>{{ $subm->label }}</a>
+                    @foreach($menus->where('depth', 2)->where('parent', $subm->id) as $subsubm)
+                    @if($loop->first)
+                    <ul class="dropdown-menu">
+                    @endif
+                        <li><a href="{{ $subsubm->link }}">{{ $subsubm->label }}</a></li>
+                    @if($loop->last)
+                    </ul>
+                    @endif
+                    @endforeach
+                </li>
+            @if($loop->last)
+            </ul>
+            @endif
+            @endforeach
+        </li>
+        @endif
+    @endforeach
+</ul>
+@endif

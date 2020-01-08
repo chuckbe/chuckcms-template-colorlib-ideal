@@ -1,0 +1,33 @@
+{
+    "name": "chuckbe/chuckcms-template-colorlib-ideal",
+    "description": "A Colorlib Theme named 'Ideal' - ported for ChuckCMS.",
+    "keywords": ["chuckbe", "chuckcms", "cms", "laravel", "php"],
+    "homepage": "https://github.com/chuckbe/chuckcms-template-colorlib-ideal",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "~5.5||~5.6||~5.7||~5.8||^6.0",
+        "chuckbe/chuckcms": "~0.1"
+    },
+    "authors": [
+        {
+            "name": "Karel Brijs",
+            "email": "karel@chuck.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chuckbe\\ChuckcmsTemplateColorlibIdeal\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chuckbe\\ChuckcmsTemplateColorlibIdeal\\ChuckcmsTemplateColorlibIdealServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
